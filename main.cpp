@@ -11,7 +11,6 @@ using namespace std;
 #define GLUT_WHEEL_DOWN 4
 
 
-
 struct Shape
 {
     Vector3 mPosition;

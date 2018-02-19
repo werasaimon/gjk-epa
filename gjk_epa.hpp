@@ -359,8 +359,9 @@ class GJKEPAGenerator
 
 	};
 
-	template <typename ConvexTemplate>
-	static bool extrapolateContactInformation(ContactBasicData* contactData , const MinkowskiDiff<ConvexTemplate>&  MinkowskiShape)
+
+
+    static bool extrapolateContactInformation(ContactBasicData* contactData)
 	{
 
 		SupportPoint supports[3];
@@ -376,12 +377,12 @@ class GJKEPAGenerator
 		Triangle triangle(supports[0],supports[1],supports[2]);
 
 		// actually extrapolate contact information
-		return extrapolateContactInformation(&triangle,contactData , MinkowskiShape);
+        return extrapolateContactInformation(&triangle,contactData);
 	}
 
 
-	template <typename ConvexTemplate>
-	static bool extrapolateContactInformation(const Triangle* triangle , ContactBasicData* contactData , const MinkowskiDiff<ConvexTemplate>&  MinkowskiShape)
+
+    static bool extrapolateContactInformation(const Triangle* triangle , ContactBasicData* contactData )
 	{
 
 		// project the origin onto the triangle
@@ -458,7 +459,7 @@ class GJKEPAGenerator
 
 
 	template <typename ConvexTemplate>
-	static bool GJKIntersectionTest(Simplex* inout_simplex , int* uniqueIdCounter , const MinkowskiDiff<ConvexTemplate>&  MinkowskiShape , ContactBasicData* in_contactData )
+    static bool GJKIntersectionTest(Simplex* inout_simplex , int* uniqueIdCounter , const MinkowskiDiff<ConvexTemplate>&  MinkowskiShape )
 	{
 		Simplex& sim = *inout_simplex;
 
@@ -706,7 +707,7 @@ class GJKEPAGenerator
 	            //////////////////////////////////////////////////////////////////////////
 	            // GENERATE CONTACT INFO AND RETURN
 	            return extrapolateContactInformation(&*closestTriangle_it,
-	                                                 inout_contactData,MinkowskiShape);
+                                                     inout_contactData);
 
 
 	            break;
@@ -751,7 +752,7 @@ class GJKEPAGenerator
 		Simplex testSimplex;
 		int supportPointNextUniqueId = 0;
 
-	    bool isValid = (GJKIntersectionTest(&testSimplex,&supportPointNextUniqueId,MinkowskiShape , input_contactData) &&
+        bool isValid = (GJKIntersectionTest(&testSimplex,&supportPointNextUniqueId,MinkowskiShape ) &&
 	                    EPAManifoldExtraction(&testSimplex,&supportPointNextUniqueId,MinkowskiShape,input_contactData) );
 
 	    return isValid;
