@@ -4,8 +4,6 @@
 # GJK
 ![gjkabc](https://user-images.githubusercontent.com/10780778/36461372-b0c46208-16c5-11e8-8de9-b1cb58772a17.png)
 ![gjkacd](https://user-images.githubusercontent.com/10780778/36461342-87525326-16c5-11e8-8291-76997afa22d4.png)
-
-# The Polyhedron 
 ![gjkadb](https://user-images.githubusercontent.com/10780778/36461392-cff5df26-16c5-11e8-8d1c-9621be6f7fa7.png)
 
 # The closset Polyhedron 
