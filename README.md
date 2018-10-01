@@ -2,6 +2,7 @@
 #Linux lib
 
 sudo apt-get install -y libxtst-dev xvfb will fix the installation issue.
+
 http://www.guguncube.com/2733/python-spynner-installation-in-ubuntu
 
 
